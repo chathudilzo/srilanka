@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:srilanka/widgets/top_bar.dart';
 
+import '../widgets/menu_drawer.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -41,7 +43,7 @@ _scrollListner(){
 
     return Scaffold(
       //extendBodyBehindAppBar: true,
-      //drawer: MenuDrawer(),
+      drawer:const MenuDrawer(),
       appBar: screenSize.width<800?AppBar(
         iconTheme: IconThemeData(color: Colors.blue),
         elevation: 0,
