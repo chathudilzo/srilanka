@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:srilanka/widgets/carousel.dart';
 import 'package:srilanka/widgets/top_bar.dart';
 
 import '../widgets/menu_drawer.dart';
@@ -60,19 +61,23 @@ _scrollListner(){
         children: [
           Stack(
             children: [
-              Container(
-                child: SizedBox(
-                  height: screenSize.height*0.65,
-                  width: screenSize.width,
-                  child: Container(color: Colors.red,),
-                ),
-              ),
               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  //color: Colors.amber,
+                  
+                              
+                    //  height: screenSize.height*0.65,
+                    //  width: screenSize.width,
+                     child: const MainCarousel(),
+                
+                ),
+              )
+             , Padding(
                 padding:  EdgeInsets.only(top:screenSize.height*0.65),
                 child: Column(
                   children: [
-                    Text('ddddddddddd'),
-           Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('ddddddddddd'), Text('cccccccccccc'), Text('cccccccccccc'), Text('cccccccccccc'), Text('cccccccccccc'),
+                    
                   ],
                 ),
               )

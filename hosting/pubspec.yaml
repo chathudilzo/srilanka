@@ -1,4 +1,4 @@
-name: srilanka
+name: srilanka_183df
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -30,17 +30,12 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
-    sdk: flutter  
-  firebase_core: ^2.14.0
-  firebase_auth: 
-  cloud_firestore:
-  google_fonts:
-  get:
-  carousel_slider:
+    sdk: flutter
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  
 
 dev_dependencies:
   flutter_test:
