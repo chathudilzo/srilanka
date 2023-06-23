@@ -22,16 +22,17 @@ final List _isHovering=[false,false,false];
     var screenSize=MediaQuery.of(context).size;
 
     return Container(
-      decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 185, 37, 32).withOpacity(widget.opacity),Color.fromARGB(255, 20, 20, 20).withOpacity(widget.opacity)])),
+      decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 59, 59, 59).withOpacity(widget.opacity),Color.fromARGB(255, 15, 57, 73).withOpacity(widget.opacity)])),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Sri Lanka',style:GoogleFonts.dancingScript(
-              fontSize: 26,
-              fontWeight: FontWeight.w900
+              fontSize: 30,
+              fontWeight: FontWeight.w900,
+              color: Color.fromARGB(255, 6, 31, 1)
             )),
             SizedBox(width: screenSize.width/15,),
             InkWell(
@@ -47,7 +48,7 @@ final List _isHovering=[false,false,false];
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text('Home',style: TextStyle(
-                    color: _isHovering[0]?Color.fromARGB(255, 238, 215, 4):Colors.black,
+                    color: _isHovering[0]?Color.fromARGB(255, 165, 14, 107):Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16
                   ),),SizedBox(height: 5,),
@@ -77,7 +78,7 @@ final List _isHovering=[false,false,false];
               child: Column(
                 children: [
                   Text('Province',style: TextStyle(
-                    color: _isHovering[1]?Color.fromARGB(255, 238, 215, 4):Colors.black,
+                    color: _isHovering[1]?Color.fromARGB(255, 165, 14, 107):Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16
                   ),),
@@ -104,7 +105,7 @@ final List _isHovering=[false,false,false];
               child: Column(
                 children: [
                   Text('About',style: TextStyle(
-                    color: _isHovering[2]?Color.fromARGB(255, 238, 215, 4):Colors.black,
+                    color: _isHovering[2]?Color.fromARGB(255, 165, 14, 107):Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16
                   ),),
@@ -124,7 +125,7 @@ final List _isHovering=[false,false,false];
               onTap: () {
                 
               },
-              child: Container(child: Center(child: Text('LogIn',style: TextStyle(color: Color.fromARGB(255, 236, 119, 23),fontWeight: FontWeight.bold,
+              child: Container(child: Center(child: Text('LogIn',style: TextStyle(color: Color.fromARGB(255, 140, 4, 158),fontWeight: FontWeight.bold,
                       fontSize: 16),),),),
             ),
             SizedBox(width: screenSize.width/40,),

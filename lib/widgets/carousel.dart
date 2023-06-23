@@ -64,7 +64,7 @@ var _isLoading=true;
     return _urls.map((e) => ClipRRect(
       borderRadius: BorderRadius.circular(8),
     
-      child: Image.network(e,fit: BoxFit.cover,),
+      child: Image.network(e,fit: BoxFit.fill,),
     )).toList();
   }
 
@@ -80,7 +80,7 @@ var _isLoading=true;
         options: CarouselOptions(
           autoPlay: true,
           enlargeCenterPage: true,
-          aspectRatio: 18/7,
+          aspectRatio: 18/6,
           onPageChanged: (index, reason) {
             setState(() {
               _current=index;
@@ -93,7 +93,7 @@ var _isLoading=true;
               }
             });
         },)
-        ),AspectRatio(aspectRatio: 18/7,
+        ),AspectRatio(aspectRatio: 18/6,
         child: Center(
           child: Text(_places[_current],style: TextStyle(
                 letterSpacing: 8,
@@ -103,7 +103,7 @@ var _isLoading=true;
               ),),
         ),
         ),
-        screenSize.width<800?Container():AspectRatio(aspectRatio: 18/8,child: Center(
+        screenSize.width<800?Container():AspectRatio(aspectRatio: 16/6,child: Center(
           heightFactor: 1,
           child: Align(
             alignment: Alignment.bottomCenter,

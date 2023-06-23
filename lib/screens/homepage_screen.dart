@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:srilanka/widgets/bottom_bar.dart';
 import 'package:srilanka/widgets/carousel.dart';
+import 'package:srilanka/widgets/featured_heading.dart';
+import 'package:srilanka/widgets/featured_tiles.dart';
+import 'package:srilanka/widgets/quick_access_bar.dart';
 import 'package:srilanka/widgets/top_bar.dart';
 
 import '../widgets/menu_drawer.dart';
@@ -39,7 +43,7 @@ _scrollListner(){
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     _opacity = _scrollPosition < screenSize.height * 0.40
-        ? _scrollPosition / (screenSize.height * 0.40)
+        ? _scrollPosition / (screenSize.height * 0.40)+0.25
         : 1;
 
     return Scaffold(
@@ -55,10 +59,11 @@ _scrollListner(){
             )),
       ):
       PreferredSize(child: TopBar(_opacity), 
-      preferredSize: Size(screenSize.width, 70)),
+      preferredSize: Size(screenSize.width, 50)),
 
       body:SingleChildScrollView(controller: _scrollController,child: Column(
         children: [
+          FloatingQuickAccessBar(screenSize:screenSize),
           Stack(
             children: [
               Padding(
@@ -73,16 +78,21 @@ _scrollListner(){
                 
                 ),
               )
-             , Padding(
-                padding:  EdgeInsets.only(top:screenSize.height*0.65),
-                child: Column(
+             , 
+             
+            ],
+          ),
+           Column(
                   children: [
                     
+                    FeaturedHeading(screenSize: screenSize),
+                    FeaturedTiles(screenSize:screenSize),
+                    
+                    
+                    SizedBox(height: 20,),
+                    BottomBar()
                   ],
                 ),
-              )
-            ],
-          )
         ],
       ),),
     );
