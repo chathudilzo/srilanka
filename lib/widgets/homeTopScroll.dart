@@ -21,6 +21,7 @@ class _TopScrollState extends State<TopScroll> { int _currentIndex = 0;
 
   final List<String> titleList=['A Destination for Adventure Travelers','A Land of Serene Beauty','A Country Rich in History and Culture'];
 
+bool _isDrawerVisible=false;
 
   @override
   Widget build(BuildContext context) {
@@ -55,27 +56,34 @@ class _TopScrollState extends State<TopScroll> { int _currentIndex = 0;
                       Positioned(
                         top: 20,
                         right: 20,
-                        child:Container(
-                          padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          boxShadow:[
-                            BoxShadow(
-                              blurRadius: 5,
-                              spreadRadius: 3,
-                              offset: Offset(1,1)
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.black,
-                        
-                        ),
-                        child: Row(
-                          children: [
-                            Text('MENU',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                            Icon(Icons.menu,color: Colors.blue,)
-                          ],
-                        ),
-                      )),
+                        child:GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _isDrawerVisible=true;
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            boxShadow:[
+                              BoxShadow(
+                                blurRadius: 5,
+                                spreadRadius: 3,
+                                offset: Offset(1,1)
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.black,
+                          
+                          ),
+                          child: Row(
+                            children: [
+                              Text('MENU',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                              Icon(Icons.menu,color: Colors.blue,)
+                            ],
+                          ),
+                                              ),
+                        )),
                       Positioned(
                         bottom: 100,
                         left: 0,
@@ -104,7 +112,8 @@ class _TopScrollState extends State<TopScroll> { int _currentIndex = 0;
               });
           }).toList()
           ),
-        )
+        ),if(_isDrawerVisible)
+        AnimatedContainer(duration: Duration(microseconds: 200),width: width*0.3,height: MediaQuery.of(context).size.height,color: Colors.black,child: Text('drawer'),)
       ],
     ):Column(
       children: [
@@ -166,20 +175,22 @@ class _TopScrollState extends State<TopScroll> { int _currentIndex = 0;
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Center(child: Text(titleList[_currentIndex],style: GoogleFonts.montserrat(fontSize: 15,color: Color.fromARGB(255, 255, 255, 255),),)),
-                            InkWell(
-                              
-                              
-                              onTap: () {
+                            
+                             InkWell(
                                 
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  border: Border.all(width: 1,color: Colors.white)
+                                
+                                onTap: () {
+                                  
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(width: 2,color: Colors.white)
+                                  ),
+                                  child: Text('DESTINATIONS',style: TextStyle(color: Colors.white),),
                                 ),
-                                child: Text('DESTINATIONS',style: TextStyle(color: Colors.white),),
                               ),
-                            )
+                         
                           ],
                         ))
                     ],

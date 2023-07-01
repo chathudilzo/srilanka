@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/gestures.dart';
 import 'package:srilanka/content_controller.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      scrollBehavior: CustomScrollBehavior(),
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -39,4 +41,11 @@ class MyApp extends StatelessWidget {
       home: const HomePage(),
     );
   }
+}
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }

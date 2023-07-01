@@ -1,8 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../screens/province.dart';
+
 
 class TopBar extends StatefulWidget {
    const TopBar(this.opacity, {super.key});
@@ -73,25 +76,27 @@ final List _isHovering=[false,false,false];
                 });
               },
               onTap: () {
-                
+                Get.to(()=>Province());
               },
-              child: Column(
-                children: [
-                  Text('Province',style: TextStyle(
-                    color: _isHovering[1]?Color.fromARGB(255, 165, 14, 107):Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16
-                  ),),
-                  SizedBox(height: 5,),
-                  Visibility(
-                    maintainAnimation: true,
-                    maintainSize: true,
-                    maintainState: true,
-                    visible: _isHovering[1],
-                    child: Container(width: 20,height: 2,color: Colors.amber,))
-                ],
+             
+                child: Column(
+                  children: [
+                    Text('Province',style: TextStyle(
+                      color: _isHovering[1]?Color.fromARGB(255, 165, 14, 107):Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
+                    ),),
+                    SizedBox(height: 5,),
+                    Visibility(
+                      maintainAnimation: true,
+                      maintainSize: true,
+                      maintainState: true,
+                      visible: _isHovering[1],
+                      child: Container(width: 20,height: 2,color: Colors.amber,))
+                  ],
+                ),
               ),
-            ),
+         
              SizedBox(width: screenSize.width/15,),
             InkWell(
               onHover: (value) {
