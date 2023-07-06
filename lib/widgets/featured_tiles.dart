@@ -10,7 +10,7 @@ class FeaturedTiles extends StatelessWidget {
 
 
   final List<String> assets=['assets/reli.jpg','assets/waterfall.jpg','assets/fest.jpg','assets/gov.jpg'];
-  final List<String> title=['WaterFalles','Religous','Festivels','Gov Services'];
+  final List<String> title=['Religous','WaterFalles','Festivels','Gov Services'];
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,14 @@ class FeaturedTiles extends StatelessWidget {
           (int pageIndex) =>Row(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   width: screenSize.width/2.5,
                   height: screenSize.width/1.5,
                   child: ClipRRect(borderRadius: BorderRadius.circular(5),child: Image.asset(assets[pageIndex],fit: BoxFit.cover,),),
                 ),
-                Padding(padding: EdgeInsets.only(top: screenSize.height/70),child: Text(title[pageIndex],style: TextStyle(fontSize: 16,fontFamily:'Montserrat',fontWeight: FontWeight.w500),),)
+                Padding(padding: EdgeInsets.only(top: screenSize.height/70),child: Center(child: Text(title[pageIndex],textAlign: TextAlign.center,style: TextStyle(fontSize: 16,fontFamily:'Montserrat',fontWeight: FontWeight.w500),)),)
               ],
             ),
             SizedBox(
@@ -49,6 +50,7 @@ class FeaturedTiles extends StatelessWidget {
       children: [
 
         ...Iterable<int>.generate(assets.length).map((int pageIndex) =>Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
@@ -81,6 +83,7 @@ class FeaturedTiles extends StatelessWidget {
                         ),
                         child: Text(
                           title[pageIndex],
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Montserrat',

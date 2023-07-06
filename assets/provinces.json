@@ -4,55 +4,55 @@
         "name": "Central Province",
         "description": "The Central Province is known for its picturesque landscapes, cool climate, and tea plantations.",
         "famousFor": "Tea plantations, UNESCO World Heritage Sites (e.g., Kandy, Sigiriya), Horton Plains National Park",
-        "image": "assets/images/central_province.jpg"
+        "image": "assets/centralp.jpg"
       },
       {
         "name": "Eastern Province",
         "description": "The Eastern Province is renowned for its beautiful beaches, wildlife, and cultural heritage.",
         "famousFor": "Arugam Bay (surfing spot), Pigeon Island National Park, Pasikuda Beach, ancient Buddhist sites",
-        "image": "assets/images/eastern_province.jpg"
+        "image": "assets/estenp.jpg"
       },
       {
         "name": "North Central Province",
         "description": "The North Central Province is home to ancient historical sites and fascinating archaeological wonders.",
         "famousFor": "Ancient cities of Anuradhapura and Polonnaruwa, Mihintale, Sigiriya Rock Fortress",
-        "image": "assets/images/north_central_province.jpg"
+        "image": "assets/northcentralp.jpg"
       },
       {
         "name": "Northern Province",
         "description": "The Northern Province offers a glimpse into Sri Lanka's rich cultural heritage and natural beauty.",
         "famousFor": "Jaffna, Nallur Kovil, Nagadeepa Viharaya, Wilpattu National Park",
-        "image": "assets/images/northern_province.jpg"
+        "image": "assets/nothernp.jpg"
       },
       {
         "name": "North Western Province",
         "description": "The North Western Province boasts stunning coastlines, vibrant markets, and historical landmarks.",
         "famousFor": "Negombo Beach, Munneswaram Kovil, Kalpitiya, Wilpattu National Park",
-        "image": "assets/images/northwestern_province.jpg"
+        "image": "assets/northwestp.jpg"
       },
       {
         "name": "Sabaragamuwa Province",
         "description": "The Sabaragamuwa Province is known for its lush greenery, waterfalls, and rich biodiversity.",
         "famousFor": "Adam's Peak, Ratnapura (gem city), Sinharaja Forest Reserve, Belihuloya",
-        "image": "assets/images/sabaragamuwa_province.jpg"
+        "image": "assets/saparagamup.jpg"
       },
       {
         "name": "Southern Province",
         "description": "The Southern Province offers pristine beaches, cultural sites, and opportunities for water sports.",
         "famousFor": "Galle Fort, Unawatuna Beach, Mirissa Whale Watching, Yala National Park",
-        "image": "assets/images/southern_province.jpg"
+        "image": "assets/southernp.jpg"
       },
       {
         "name": "Uva Province",
         "description": "The Uva Province is renowned for its scenic landscapes, waterfalls, and tea cultivation.",
         "famousFor": "Ella, Horton Plains National Park, Rawana Falls, Haputale",
-        "image": "assets/images/uva_province.jpg"
+        "image": "assets/uvap.jpg"
       },
       {
         "name": "Western Province",
         "description": "The Western Province is home to the commercial capital Colombo and offers a blend of modernity and history.",
         "famousFor": "Colombo, Galle Face Green, Mount Lavinia Beach, Kelaniya Raja Maha Viharaya",
-        "image": "assets/images/western_province.jpg"
+        "image": "assets/westernp.jpg"
       }
     ]
   }

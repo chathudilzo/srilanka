@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:srilanka/content_controller.dart';
+import 'package:srilanka/widgets/place_list_page.dart';
 
 import '../responsive.dart';
 
@@ -39,7 +40,7 @@ List _isHovering=[false,false,false,false,false,false];
           });
         },
         onTap: () {
-          
+          Get.to(()=>PlaceList(cat: items[i],));
         },
         child: Text(items[i],style: TextStyle(color:_isHovering[i]?Colors.blueAccent:Colors.blueGrey,fontWeight: FontWeight.bold),),
       );
@@ -69,7 +70,7 @@ List _isHovering=[false,false,false,false,false,false];
           right: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
-        ),child: widget.screenSize.width<800?Column(
+        ),child: widget.screenSize.width<1000?Column(
 children: [
   for(int i=0;i<items.length;i++)
   Padding(padding: EdgeInsets.only(bottom: widget.screenSize.height/45),child: Card(
@@ -88,7 +89,9 @@ children: [
               value ? _isHovering[i] = true : _isHovering[i] = false;
           });
         },
-        onTap: () {},
+        onTap: () {
+          Get.to(PlaceList(cat: items[i],));
+        },
         child: Text(
           items[i],
           style: TextStyle(

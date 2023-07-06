@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class MainCarousel extends StatefulWidget {
   const MainCarousel({super.key});
@@ -41,6 +42,7 @@ var _isLoading=true;
       List<String>places=[];
 
       snapshot.docs.forEach((doc) { 
+        
         urls.add(doc['url' as String]);
         places.add(doc['name'] as String);
       });
@@ -50,7 +52,7 @@ var _isLoading=true;
         print('loaded$places');
         _urls=urls;
         _places=places;
-        _isLoading=false;
+        _isLoading=urls.isEmpty||places.isEmpty?true:false;
       });
     }catch(e){
       setState(() {
@@ -73,7 +75,9 @@ var _isLoading=true;
     var screenSize=MediaQuery.of(context).size;
     var imageSliders=generateImageTiles(screenSize);
 
-    return _isLoading?CircularProgressIndicator():SizedBox(
+    return _isLoading?LoadingAnimationWidget.prograssiveDots(color: Colors.green, size: 35)
+    
+    :SizedBox(
       height: screenSize.height*0.8,
       width: screenSize.width*0.8,
       child: Stack(

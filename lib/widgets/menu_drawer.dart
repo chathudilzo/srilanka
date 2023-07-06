@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:srilanka/screens/province.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -10,7 +12,7 @@ class MenuDrawer extends StatelessWidget {
     return Drawer(
       
       child: Container(
-        color: Colors.black,
+        color: Colors.black54,
         child: Padding(padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -30,7 +32,9 @@ class MenuDrawer extends StatelessWidget {
               child: Divider(color: Colors.grey,thickness: 2,)
               ,),
               InkWell(
-              onTap: (){},
+              onTap: (){
+                Get.to(()=>Province());
+              },
               child: Text(
                 'Province',
                 style: TextStyle(

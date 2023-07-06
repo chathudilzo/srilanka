@@ -48,17 +48,19 @@ _scrollListner(){
         : 1;
 
     return Scaffold(
-      //extendBodyBehindAppBar: true,
-      drawer:const MenuDrawer(),
-      // appBar: screenSize.width<800?AppBar(
-      //   iconTheme: IconThemeData(color: Colors.blue),
-      //   elevation: 0,
-      //   backgroundColor: Color.fromARGB(255, 7, 29, 99),
-      //   title:Text('Sri Lanka',style:GoogleFonts.dancingScript(
-      //         fontSize: 26,
-      //         fontWeight: FontWeight.w900
-      //       )),
-      // ):
+      extendBodyBehindAppBar: true,
+      
+       appBar: AppBar(
+         iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0),size: 50),
+         elevation: 0,
+         backgroundColor: Color.fromARGB(255, 7, 29, 99).withOpacity(0.001),
+         title:Text('Sri Lanka',style:GoogleFonts.dancingScript(
+               fontSize: 26,
+               fontWeight: FontWeight.w900
+             )),
+       ),
+       endDrawer: const MenuDrawer(),
+       
       // PreferredSize(child: TopBar(_opacity), 
       // preferredSize: Size(screenSize.width, 70)),
 
