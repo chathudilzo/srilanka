@@ -180,7 +180,15 @@ extendBodyBehindAppBar: true,
              )),
        ),
        endDrawer: const MenuDrawer(),
-       body: _buildContent()
+       body: Column(
+         children: [
+          Text(widget.cat),
+           SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height*0.95,
+            child: _buildContent()),
+         ],
+       )
 
     );
   }
