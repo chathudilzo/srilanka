@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:srilanka/content_controller.dart';
-import 'package:srilanka/widgets/place_list_page.dart';
+import 'package:srilanka/screens/place_list_page.dart';
 
 import '../responsive.dart';
 

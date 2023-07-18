@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -15,7 +16,17 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
+final colorizeColors = [
+  Colors.purple,
+  Colors.blue,
+  Colors.yellow,
+  Colors.red,
+];
 
+final colorizeTextStyle = TextStyle(
+  fontSize: 50.0,
+  
+);
   List<String> images=['assets/swip1.jpg','assets/swip2.jpg','assets/swip3.jpg','assets/swip4.jpg','assets/swip5.jpg','assets/swip6.jpg','assets/swip7.jpg'];
 
   bool isSelectedServicves=true;
@@ -55,20 +66,82 @@ class _AboutState extends State<About> {
               decoration: BoxDecoration(color: Colors.amberAccent),
               child: Text('About Us',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold),),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(colors: [Colors.grey,Colors.blueAccent])
+            width>800?Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Colors.grey,Colors.blueAccent])
+                    ),
+                    width:width*0.5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Sri Lanka's premier travel authority.",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 38, 8, 170)),),
+                          Text("Welcome to the Sri Lanka Tourism webpage! We are delighted to showcase the mesmerizing beauty, rich culture, and warm hospitality of this tropical paradise.\n\nAt Sri Lanka Tourism, our mission is to inspire and assist travelers in discovering the wonders of Sri Lanka. Whether you're seeking stunning beaches, lush tea plantations, ancient historical sites, or thrilling wildlife encounters, Sri Lanka has it all.\n\nImmerse yourself in the cultural diversity of our vibrant cities, such as the bustling capital Colombo with its vibrant markets and historic landmarks. Explore the UNESCO World Heritage Sites of Sigiriya, Polonnaruwa, and Anuradhapura, which offer a glimpse into our ancient civilization and architectural marvels.Experience the breathtaking natural beauty of our national parks, where you can spot majestic elephants, elusive leopards, and colorful birdlife. Enjoy the thrill of whale watching in Mirissa or embark on a scenic train ride through the misty hills of Nuwara Eliya.Indulge in our culinary delights, savoring the flavors of spicy curries, fresh seafood, and aromatic teas. Discover the art of Ayurveda, an ancient healing tradition that rejuvenates mind, body, and soul.\n\nOur team at Sri Lanka Tourism is dedicated to ensuring your journey is filled with unforgettable experiences. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family on an adventure, we will tailor an itinerary that suits your interests and preferences.\n\nWe invite you to explore our website and discover the wonders of Sri Lanka. Let us be your guide as you create memories that will last a lifetime. Come, experience the warmth and beauty of Sri Lanka, where every moment is a captivating story waiting to be told.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                        ],
+                      ),
+                    ),
+                  )),
                 ),
-                width:width<800?width*0.9:width*0.5,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text("Welcome to the Sri Lanka Tourism webpage! We are delighted to showcase the mesmerizing beauty, rich culture, and warm hospitality of this tropical paradise.\n\nAt Sri Lanka Tourism, our mission is to inspire and assist travelers in discovering the wonders of Sri Lanka. Whether you're seeking stunning beaches, lush tea plantations, ancient historical sites, or thrilling wildlife encounters, Sri Lanka has it all.\n\nImmerse yourself in the cultural diversity of our vibrant cities, such as the bustling capital Colombo with its vibrant markets and historic landmarks. Explore the UNESCO World Heritage Sites of Sigiriya, Polonnaruwa, and Anuradhapura, which offer a glimpse into our ancient civilization and architectural marvels.Experience the breathtaking natural beauty of our national parks, where you can spot majestic elephants, elusive leopards, and colorful birdlife. Enjoy the thrill of whale watching in Mirissa or embark on a scenic train ride through the misty hills of Nuwara Eliya.Indulge in our culinary delights, savoring the flavors of spicy curries, fresh seafood, and aromatic teas. Discover the art of Ayurveda, an ancient healing tradition that rejuvenates mind, body, and soul.\n\nOur team at Sri Lanka Tourism is dedicated to ensuring your journey is filled with unforgettable experiences. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family on an adventure, we will tailor an itinerary that suits your interests and preferences.\n\nWe invite you to explore our website and discover the wonders of Sri Lanka. Let us be your guide as you create memories that will last a lifetime. Come, experience the warmth and beauty of Sri Lanka, where every moment is a captivating story waiting to be told.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                
+                 Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: width*0.25,
+                        decoration: BoxDecoration(
+                          boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                          borderRadius: BorderRadius.circular(10),
+                  gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                        ),
+                        child:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 )
+              ]
+            ):Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Colors.grey,Colors.blueAccent])
+                    ),
+
+                    width:width*0.9,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text("Welcome to the Sri Lanka Tourism webpage! We are delighted to showcase the mesmerizing beauty, rich culture, and warm hospitality of this tropical paradise.\n\nAt Sri Lanka Tourism, our mission is to inspire and assist travelers in discovering the wonders of Sri Lanka. Whether you're seeking stunning beaches, lush tea plantations, ancient historical sites, or thrilling wildlife encounters, Sri Lanka has it all.\n\nImmerse yourself in the cultural diversity of our vibrant cities, such as the bustling capital Colombo with its vibrant markets and historic landmarks. Explore the UNESCO World Heritage Sites of Sigiriya, Polonnaruwa, and Anuradhapura, which offer a glimpse into our ancient civilization and architectural marvels.Experience the breathtaking natural beauty of our national parks, where you can spot majestic elephants, elusive leopards, and colorful birdlife. Enjoy the thrill of whale watching in Mirissa or embark on a scenic train ride through the misty hills of Nuwara Eliya.Indulge in our culinary delights, savoring the flavors of spicy curries, fresh seafood, and aromatic teas. Discover the art of Ayurveda, an ancient healing tradition that rejuvenates mind, body, and soul.\n\nOur team at Sri Lanka Tourism is dedicated to ensuring your journey is filled with unforgettable experiences. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family on an adventure, we will tailor an itinerary that suits your interests and preferences.\n\nWe invite you to explore our website and discover the wonders of Sri Lanka. Let us be your guide as you create memories that will last a lifetime. Come, experience the warmth and beauty of Sri Lanka, where every moment is a captivating story waiting to be told.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                    ),
+                  )),
                 ),
-              )),
+                
+                Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        width: width*0.9,
+                        height: height*0.5,
+                        decoration: BoxDecoration(
+                          boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                          borderRadius: BorderRadius.circular(10),
+                  gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                        ),
+                        child:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+              
+              
+              ],
             ),
+           
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -205,6 +278,7 @@ RichText(text: TextSpan(
               )
             ),
             SizedBox(height: 20,),
+            
             BottomBar()
             
           ],

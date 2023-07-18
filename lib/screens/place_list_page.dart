@@ -3,10 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:srilanka/screens/post_details_page.dart';
 
-import 'menu_drawer.dart';
+import '../widgets/menu_drawer.dart';
 
 class Category{
   final String cat;
@@ -73,14 +75,87 @@ Widget _buildCategoryList(){
   double height=MediaQuery.of(context).size.height;
   return Center(
     child: SizedBox(
-      width: width*0.6,
+      width: width<800?width*0.9:width*0.6,
      
       child: ListView.builder(
         itemCount: _categories.length,
         itemBuilder:((context, index) {
           final category=_categories[index];
           final description=category.details.length<=50?category.details:category.details.substring(0,50)+'...';
-          return InkWell(
+          return width>800? Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
+              onHover: (value) {
+                setState(() {
+                  value?_isHovering=true:_isHovering=false;
+                  print(_isHovering);
+                });
+              },
+              onTap: () {
+                Get.to(()=>PostDetailsPage(title: category.title,));
+              },
+              child: SizedBox(
+                
+             
+                child: Container(
+                  width: width*0.5,
+                  height:_isHovering? height*0.65:height*0.6,
+                  //constraints: const BoxConstraints(maxWidth: 400),
+                  margin: const EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(top:10),
+             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey,
+              boxShadow: [BoxShadow(blurRadius: 5,spreadRadius: 3,offset: Offset(0,3),color: Colors.black)],
+               image: DecorationImage(
+               image: NetworkImage(category.img)
+             
+            ,fit: BoxFit.cover,onError: (exception, stackTrace){
+               Image.asset('assets/placeholder.jpg',fit: BoxFit.cover,);
+            }
+              
+            
+             ),
+             ), 
+                  
+               
+              
+              
+             
+             
+                 
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(category.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(description),
+                  //      SizedBox(
+                  //       width: width*0.5,
+                  //       height: height*0.5,
+                  //        child: Image.network(category.img,fit: BoxFit.fill,errorBuilder: (context, error, stackTrace) {
+                  //    return Image.asset('assets/placeholder.jpg')
+                  //    ;
+                  //  },),
+              //             SizedBox(
+              //               width: width*0.5,
+              //               height: height*0.5,
+              //               child:  FadeInImage(
+              //   placeholder: AssetImage('assets/placeholder.jpg'),
+              //   image:category.img NetworkImage(category.img),
+              //   fit: BoxFit.fill,
+              //   imageErrorBuilder: (context, error, stackTrace) {
+              //     return Image.asset('assets/placeholder.jpg', fit: BoxFit.cover);
+              //   },
+              // ),
+              //             )
+            
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ):InkWell(
             onHover: (value) {
               setState(() {
                 value?_isHovering=true:_isHovering=false;
@@ -88,19 +163,20 @@ Widget _buildCategoryList(){
               });
             },
             onTap: () {
-              print('tapped');
+             Get.to(()=>PostDetailsPage(title: category.title,));
             },
             child: SizedBox(
               
            
               child: Container(
-                width: width*0.5,
-                height:_isHovering? height*0.8:height*0.6,
+                width: width*0.9,
+                height:_isHovering? height*0.4:height*0.4,
                 //constraints: const BoxConstraints(maxWidth: 400),
                 margin: const EdgeInsets.only(bottom: 20),
                 padding: const EdgeInsets.only(top:10),
            decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
+            boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(0,3),color: Colors.black)],
             color: Colors.grey,
              image: DecorationImage(
              image: NetworkImage(category.img)
@@ -119,19 +195,21 @@ Widget _buildCategoryList(){
            
            
                
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(category.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    Text(description),
-                //      SizedBox(
-                //       width: width*0.5,
-                //       height: height*0.5,
-                //        child: Image.network(category.img,fit: BoxFit.fill,errorBuilder: (context, error, stackTrace) {
-                //    return Image.asset('assets/placeholder.jpg')
-                //    ;
-                //  },),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Center(child: Text(category.title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                      Text(description),
+                  //      SizedBox(
+                  //       width: width*0.5,
+                  //       height: height*0.5,
+                  //        child: Image.network(category.img,fit: BoxFit.fill,errorBuilder: (context, error, stackTrace) {
+                  //    return Image.asset('assets/placeholder.jpg')
+                  //    ;
+                  //  },),
             //             SizedBox(
             //               width: width*0.5,
             //               height: height*0.5,
@@ -145,7 +223,8 @@ Widget _buildCategoryList(){
             // ),
             //             )
           
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -182,7 +261,7 @@ extendBodyBehindAppBar: true,
        endDrawer: const MenuDrawer(),
        body: Column(
          children: [
-          Text(widget.cat),
+          Text(widget.cat,style: GoogleFonts.aBeeZee(fontSize: 25,fontWeight: FontWeight.bold),),
            SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height*0.95,

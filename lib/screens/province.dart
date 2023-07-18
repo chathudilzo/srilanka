@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:srilanka/screens/province_details.dart';
 import 'package:srilanka/widgets/menu_drawer.dart';
 import 'package:srilanka/widgets/top_bar.dart';
 
@@ -98,7 +100,8 @@ var screenSize=MediaQuery.of(context).size;
          backgroundColor: Color.fromARGB(255, 7, 29, 99).withOpacity(0.001),
          title:Text('Sri Lanka',style:GoogleFonts.dancingScript(
                fontSize: 26,
-               fontWeight: FontWeight.w900
+               fontWeight: FontWeight.w900,
+               color: Colors.black
              )),
        ),
        endDrawer: const MenuDrawer(),
@@ -179,33 +182,38 @@ var screenSize=MediaQuery.of(context).size;
                               itemCount: provinces.length,
                               itemBuilder:((context, index) {
                                 Provinces province=provinces[index];
-                             return  Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.all(10),
-                              width: screenSize.width*0.25,
-                              height:screenSize.height*0.25,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                   boxShadow: [BoxShadow(
-                                     blurRadius: 3,spreadRadius: 2,color: Colors.black
-                                   )]
+                             return  GestureDetector(
+                              onTap: () {
+                                Get.to(()=>ProvinceDetails(name:province.name,));
+                              },
+                               child: Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(10),
+                                width: screenSize.width*0.25,
+                                height:screenSize.height*0.25,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                     boxShadow: [BoxShadow(
+                                       blurRadius: 3,spreadRadius: 2,color: Colors.black
+                                     )]
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(province.name,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                                      Container(
+                                        width: screenSize.width*0.20,
+                                height: screenSize.height*0.40,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          image:DecorationImage(image: AssetImage(province.image),fit: BoxFit.cover)),
+                                      ),
+                                      Text(province.description,style: TextStyle(color: Colors.grey),),
+                                      Text('Famous for:${province.famousFor}',style: TextStyle(color: Colors.amberAccent),)
+                                    ],
+                                  ),
                                 ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(province.name,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
-                                    Container(
-                                      width: screenSize.width*0.20,
-                              height: screenSize.height*0.40,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image:DecorationImage(image: AssetImage(province.image),fit: BoxFit.cover)),
-                                    ),
-                                    Text(province.description,style: TextStyle(color: Colors.grey),),
-                                    Text('Famous for:${province.famousFor}',style: TextStyle(color: Colors.amberAccent),)
-                                  ],
-                                ),
-                              );
+                             );
                             })),
                           )
                         ],

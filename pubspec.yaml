@@ -43,6 +43,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   ionicons: ^0.2.2
   card_swiper: ^2.0.4
+  google_maps_flutter: ^2.2.0
+  animated_text_kit: ^4.2.2
   
 
 dev_dependencies:
