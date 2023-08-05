@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:srilanka/content_controller.dart';
+import 'package:srilanka/controllers/weather_controller.dart';
 import 'package:srilanka/screens/about.dart';
 import 'package:srilanka/screens/province_details.dart';
-import 'package:srilanka/widgets/map_sample.dart';
+import 'package:srilanka/screens/full_map_screen.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ void main()async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Get.put(ContentController());
+  final WeatherController wController = Get.put(WeatherController());
   runApp(const MyApp());
 }
 
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  HomePage(),
+      home:  FullMap(),
     );
   }
 }
