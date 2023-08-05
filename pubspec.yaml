@@ -43,9 +43,18 @@ dependencies:
   cupertino_icons: ^1.0.2
   ionicons: ^0.2.2
   card_swiper: ^2.0.4
-  google_maps_flutter: ^2.2.0
+  google_maps_flutter_web: ^0.5.1
   animated_text_kit: ^4.2.2
-  
+  scroll_loop_auto_scroll: ^0.0.5
+  google_maps_flutter: 
+  geocoding:
+  location: 
+  flutter_dotenv: ^5.1.0
+  location_geocoder: 
+  http:
+  dropdown_button2: 
+  google_maps: ^6.3.0
+  flutter_polyline_points: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -74,7 +83,7 @@ flutter:
     - assets/
     - assets/fonts/
     - assets/province/
-
+    - .env
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
