@@ -151,21 +151,26 @@ double calculateDistance(lat1,long1,lat2,long2){
 
     try{
       await dotenv.load();
-    String apiKey = dotenv.env['GOOGLE_MAP_API_KEY'].toString();
+
 
 print(_userLocation.toString());
 print(destination.toString());
 
-final String apiUrl = 'http://localhost:3000/directions';
+
 final Map<String, String> requestData = {
 'origin': '${destination.latitude},${destination.longitude}',
 'destination':'${_userLocation?.latitude},${_userLocation?.longitude}',
-'apiKey':apiKey
 };
-print(requestData);
-final requestBody = json.encode(requestData);
+final destiLat=widget.destination.latitude;
+final destiLong=widget.destination.longitude;
+final originLat=_userLocation?.latitude;
+final originLong=_userLocation?.longitude;
+
+final String apiUrl = 'http://localhost:3000/directions/$destiLat/$destiLong$originLat$originLong';
+
 //there is a problem with polyline
-final response = await http.post(Uri.parse(apiUrl), body: requestBody);
+final response = await http.post(Uri.parse(apiUrl));
+print(response);
 if (response.statusCode == 200) {
 final decodedResponse = jsonDecode(response.body);
 

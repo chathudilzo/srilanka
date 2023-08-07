@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:srilanka/screens/full_map_screen.dart';
 
 import 'menu_drawer.dart';
 
@@ -100,7 +102,7 @@ bool _isHovering=false;
                               },
                               
                               onTap: () {
-                                
+                                Get.to(()=>FullMap());
                               },
                               child: Container(
                                 padding: const EdgeInsets.all(8),

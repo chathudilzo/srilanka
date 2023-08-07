@@ -24,57 +24,59 @@ RxList<Weather> weatherData=RxList<Weather>();
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    
+    test();
     
   }
 
+Future<void>test()async{
+  try{
+    final lat=6.674.toString();
+    final lon=81.221.toString();
 
+    final apiUrl = 'http://localhost:3000/weather/$lat/$lon';
+    final response = await http.get(Uri.parse(apiUrl));
+  }catch(e){
+    print(e.toString());
+  }
+}
 Future<void>getLocationWeather(double latD,double lonD)async{
   try{
-    
- 
-    await dotenv.load();
-    _apiKey = dotenv.env['WEATHER_API'].toString();
     final double? lat=lonD;
     final double? lon=latD;
-    _apiUrl='https://api.openweathermap.org/data/2.5/weather?lat=${lat.toString()}&lon=${lon.toString()}&appid=${_apiKey}';
-     final response = await http.get(Uri.parse(_apiUrl));
+
+    final apiUrl = 'http://localhost:3000/weather/$latD/$lonD';
+    final response = await http.get(Uri.parse(apiUrl));
+
      print(response.body);
         if (response.statusCode == 200) {
-          final data = json.decode(response.body);
+      final data = json.decode(response.body);
 
-          final temp = data['main']['temp'];
-          final String message = getMessage(temp - 273.15);
-          final String icon = getIcon(data['weather'][0]['main']);
+      final temp = data['main']['temp'];
+      final String message = getMessage(temp - 273.15);
+      final String icon = getIcon(data['weather'][0]['main']);
 
-          final Weather weather = Weather(
-            place: data['name'],
-            temperature: temp - 273.15,
-            condition: data['weather'][0]['main'],
-            humidity: data['main']['humidity'],
-            country: data['sys']['country'],
-            weatherIcon: icon,
-            message: message,
-          );
-          _currentWeather.value=weather;
-          
-
-        }
-        if(_currentWeather.value!=null){
-          print(_currentWeather.value?.place);
-            clwIsLoading=false;
-        }
-        
-      
-    } catch (e) {
-      print(e.toString());
-    } finally {
-      
-      update(); // Notify listeners that the data has been updated
+      final Weather weather = Weather(
+        place: data['name'],
+        temperature: temp - 273.15,
+        condition: data['weather'][0]['main'],
+        humidity: data['main']['humidity'],
+        country: data['sys']['country'],
+        weatherIcon: icon,
+        message: message,
+      );
+      _currentWeather.value = weather;
     }
-
+    
+    if (_currentWeather.value != null) {
+      print(_currentWeather.value?.place);
+      clwIsLoading = false;
+    }
+  } catch (e) {
+    print(e.toString());
+  } finally {
+    update(); // Notify listeners that the data has been updated
+  }
 }
-
   // Future<void> getWeather() async {
   //   await dotenv.load();
   //   _apiKey = dotenv.env['WEATHER_API'].toString();
