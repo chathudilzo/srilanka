@@ -146,7 +146,7 @@ int index=0;
 BitmapDescriptor? _customMarkerIcon;
 
  Future<void>_loadMarkerIcon(String type) async {
-    final ImageConfiguration config = ImageConfiguration(size: Size(20, 20));
+    final ImageConfiguration config = ImageConfiguration(size: Size(30, 30));
 
     BitmapDescriptor? customMarkerIcon= await BitmapDescriptor.fromAssetImage(
       config,

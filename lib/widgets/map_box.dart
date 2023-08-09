@@ -136,9 +136,12 @@ double calculateDistance(lat1,long1,lat2,long2){
         break;
       }
     }
-    print('userDist:$userDistrict');
+    print('userDist:${userDistrict?.lat}${userDistrict?.long}');
    if(userDistrict!=null){
     _userLocation=LatLng(userDistrict.lat, userDistrict.long);
+    setState(() {
+      
+    });
     print('userLoc$_userLocation');
    }else{
     //_userLocation=null;
@@ -150,11 +153,11 @@ double calculateDistance(lat1,long1,lat2,long2){
      polylineCoordinates.clear();
 
     try{
-      await dotenv.load();
+    
 
 
 print(_userLocation.toString());
-print(destination.toString());
+print(widget.destination.toString());
 
 
 final Map<String, String> requestData = {
@@ -166,15 +169,16 @@ final destiLong=widget.destination.longitude;
 final originLat=_userLocation?.latitude;
 final originLong=_userLocation?.longitude;
 
-final String apiUrl = 'http://localhost:3000/directions/$destiLat/$destiLong$originLat$originLong';
-
+final String apiUrl = 'http://localhost:3000/directions/$destiLat/$destiLong/$originLat/$originLong';
+print(apiUrl);
 //there is a problem with polyline
-final response = await http.post(Uri.parse(apiUrl));
-print(response);
+final response = await http.get(Uri.parse(apiUrl));
+
 if (response.statusCode == 200) {
 final decodedResponse = jsonDecode(response.body);
 
 final overviewPolylineString = decodedResponse['routes'][0]['overview_polyline']['points'].toString();
+print(overviewPolylineString);
 //final points = PolylinePoints().decodePolyline(overviewPolylineString);
 //final polylineCoordinatesString = _polylineCoordinates.toString();
 //_polylineCoordinates.addAll(points.map((point) => LatLng(point.latitude, point.longitude)));
@@ -185,8 +189,11 @@ final overviewPolylineString = decodedResponse['routes'][0]['overview_polyline']
   LatLng latLng = LatLng(point.latitude, point.longitude);
   polylineCoordinates.add(latLng);
   }
+  setState(() {
+    
+  });
     //PolylineResult result=await polylinePoints.getRouteBetweenCoordinates('', PointLatLng(destination.latitude, destination.longitude), PointLatLng(_userLocation!.latitude, _userLocation!.longitude));
-    print(result);
+    //print(polylineCoordinates);
     
     
     // if(result.points.isNotEmpty){
@@ -208,7 +215,7 @@ final overviewPolylineString = decodedResponse['routes'][0]['overview_polyline']
        }
       setState(() {
        distance=totalDistance;
-print(distance);
+//print(distance);
       });
     }
     }catch(e){
@@ -247,7 +254,7 @@ String? selectedValue;
                                  GoogleMap(
                                  initialCameraPosition:CameraPosition(
                                    target:destination,
-                                   zoom: 14),
+                                   zoom: 4),
                                    onMapCreated:_onMapCreated,
                                    markers: {
                                      Marker(markerId: MarkerId("Destination"), position: destination),
@@ -256,7 +263,9 @@ String? selectedValue;
                                     
                                    },
                                    polylines: {
+                                    
                                      Polyline(
+                                      visible: true,
                                        polylineId: const PolylineId("route"),
                                        points: polylineCoordinates,
                                        color: Colors.red,

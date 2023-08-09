@@ -42,14 +42,20 @@ const apiKeyG = process.env.GOOGLE_MAP_API_KEY;
 // Define a route to handle the Directions API request
 //final String apiUrl = 'http://localhost:3000/directions/$destiLat/$destiLong$originLat$originLong';
 
-app.post('/directions/:destiLat/:destiLong/:originLat/:riginLong', async (req, res) => {
+app.get('/directions/:destiLat/:destiLong/:originLat/:riginLong', async (req, res) => {
  
  const params={destiLat,destiLong,originLat,riginLong}=req.params;
  
   try {
-const origin = `${destiLat}+${destiLong}`; // Colombo, Sri Lanka
+const origin = `${destiLat},${destiLong}`; // Colombo, Sri Lanka
 const destination = `${originLat},${riginLong}`; // Kandy, Sri Lanka
 console.log(req.body);
+console.log(origin);
+console.log(destination);
+var gApi=apiKeyG.replace("'","");
+var gApikey=gApi.replace("'","");
+var googleApi=gApikey.replace(",","");
+console.log(gApikey);
 const response = await axios.get('https://maps.googleapis.com/maps/api/directions/json', {
   params: {
     origin,
@@ -58,7 +64,7 @@ const response = await axios.get('https://maps.googleapis.com/maps/api/direction
     avoidHighways: false,
     avoidFerries: true,
     avoidTolls: false,
-    key: apiKeyG,
+    key: googleApi,
   },
 });
 console.log(response.data);
