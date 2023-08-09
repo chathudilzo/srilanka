@@ -36,6 +36,7 @@ final colorizeTextStyle = TextStyle(
     double width=MediaQuery.of(context).size.width;
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       
        appBar: AppBar(
@@ -63,7 +64,7 @@ final colorizeTextStyle = TextStyle(
               width: width,
               height: height*0.1,
               padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(color: Colors.amberAccent),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 59, 59, 58)),
               child: Text('About Us',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold),),
             ),
             width>800?Row(
@@ -73,7 +74,7 @@ final colorizeTextStyle = TextStyle(
                   child: Center(child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      gradient: LinearGradient(colors: [Colors.grey,Colors.blueAccent])
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
                     ),
                     width:width*0.5,
                     child: Padding(
@@ -95,15 +96,19 @@ final colorizeTextStyle = TextStyle(
                       padding: const EdgeInsets.only(right:8.0),
                       child: Container(
                         
-                        height: width*0.25,
+                        height: width*0.50,
                         decoration: BoxDecoration(
-                          boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
-                          borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
-                        ),
-                        child:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (1).png'),fit: BoxFit.cover),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
                       ),
                     ),
+                 )
                  )
               ]
             ):Column(
@@ -113,13 +118,18 @@ final colorizeTextStyle = TextStyle(
                   child: Center(child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      gradient: LinearGradient(colors: [Colors.grey,Colors.blueAccent])
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
                     ),
 
                     width:width*0.9,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text("Welcome to the Sri Lanka Tourism webpage! We are delighted to showcase the mesmerizing beauty, rich culture, and warm hospitality of this tropical paradise.\n\nAt Sri Lanka Tourism, our mission is to inspire and assist travelers in discovering the wonders of Sri Lanka. Whether you're seeking stunning beaches, lush tea plantations, ancient historical sites, or thrilling wildlife encounters, Sri Lanka has it all.\n\nImmerse yourself in the cultural diversity of our vibrant cities, such as the bustling capital Colombo with its vibrant markets and historic landmarks. Explore the UNESCO World Heritage Sites of Sigiriya, Polonnaruwa, and Anuradhapura, which offer a glimpse into our ancient civilization and architectural marvels.Experience the breathtaking natural beauty of our national parks, where you can spot majestic elephants, elusive leopards, and colorful birdlife. Enjoy the thrill of whale watching in Mirissa or embark on a scenic train ride through the misty hills of Nuwara Eliya.Indulge in our culinary delights, savoring the flavors of spicy curries, fresh seafood, and aromatic teas. Discover the art of Ayurveda, an ancient healing tradition that rejuvenates mind, body, and soul.\n\nOur team at Sri Lanka Tourism is dedicated to ensuring your journey is filled with unforgettable experiences. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family on an adventure, we will tailor an itinerary that suits your interests and preferences.\n\nWe invite you to explore our website and discover the wonders of Sri Lanka. Let us be your guide as you create memories that will last a lifetime. Come, experience the warmth and beauty of Sri Lanka, where every moment is a captivating story waiting to be told.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                      child: Column(
+                        children: [
+                          Text("Sri Lanka's premier travel authority.",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 38, 8, 170)),),
+                          Text("Welcome to the Sri Lanka Tourism webpage! We are delighted to showcase the mesmerizing beauty, rich culture, and warm hospitality of this tropical paradise.\n\nAt Sri Lanka Tourism, our mission is to inspire and assist travelers in discovering the wonders of Sri Lanka. Whether you're seeking stunning beaches, lush tea plantations, ancient historical sites, or thrilling wildlife encounters, Sri Lanka has it all.\n\nImmerse yourself in the cultural diversity of our vibrant cities, such as the bustling capital Colombo with its vibrant markets and historic landmarks. Explore the UNESCO World Heritage Sites of Sigiriya, Polonnaruwa, and Anuradhapura, which offer a glimpse into our ancient civilization and architectural marvels.Experience the breathtaking natural beauty of our national parks, where you can spot majestic elephants, elusive leopards, and colorful birdlife. Enjoy the thrill of whale watching in Mirissa or embark on a scenic train ride through the misty hills of Nuwara Eliya.Indulge in our culinary delights, savoring the flavors of spicy curries, fresh seafood, and aromatic teas. Discover the art of Ayurveda, an ancient healing tradition that rejuvenates mind, body, and soul.\n\nOur team at Sri Lanka Tourism is dedicated to ensuring your journey is filled with unforgettable experiences. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family on an adventure, we will tailor an itinerary that suits your interests and preferences.\n\nWe invite you to explore our website and discover the wonders of Sri Lanka. Let us be your guide as you create memories that will last a lifetime. Come, experience the warmth and beauty of Sri Lanka, where every moment is a captivating story waiting to be told.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                        ],
+                      ),
                     ),
                   )),
                 ),
@@ -127,16 +137,310 @@ final colorizeTextStyle = TextStyle(
                 Padding(
                       padding: const EdgeInsets.only(right:8.0),
                       child: Container(
-                        width: width*0.9,
-                        height: height*0.5,
+                        
+                        height: width*0.50,
                         decoration: BoxDecoration(
-                          boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
-                          borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
-                        ),
-                        child:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (1).png'),fit: BoxFit.cover),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
                       ),
                     ),
+                 )
+              
+              
+              ],
+            ),
+
+            width>800?Row(
+              children: [
+                Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: height*0.8,
+                        decoration: BoxDecoration(//color: Colors.red,
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (3).png'),fit: BoxFit.contain),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 )
+                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+                    width:width*0.5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Our Journey:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("The story of Explore Sri Lanka began with our insatiable wanderlust and the desire to share the magic of Sri Lanka with the world. As avid travelers ourselves, we have roamed the hidden corners of the island, from pristine beaches to mist-covered mountains. Each adventure has left an indelible mark on our hearts, and it's our mission to inspire you to create your own unforgettable memories here.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                        ],
+                      ),
+                    ),
+                  )),
+                ),
+                
+                
+              ],
+            ):Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+
+                    width:width*0.9,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          Text("Our Journey:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("The story of Explore Sri Lanka began with our insatiable wanderlust and the desire to share the magic of Sri Lanka with the world. As avid travelers ourselves, we have roamed the hidden corners of the island, from pristine beaches to mist-covered mountains. Each adventure has left an indelible mark on our hearts, and it's our mission to inspire you to create your own unforgettable memories here.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                  ),
+                ),
+                Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: width*0.50,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (3).png'),fit: BoxFit.cover),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 ),
+                
+                
+                
+              
+              
+              ],
+            ),
+
+
+
+            width>800?Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+                    width:width*0.5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Our Mission:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("Our mission is simple yet profound - to be your trusted companion in planning and experiencing an authentic Sri Lankan adventure. We aim to provide comprehensive travel information, insider tips, and immersive experiences that showcase the true essence of this diverse country.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                        ],
+                      ),
+                    ),
+                  )),
+                ),
+                Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: height*0.8,
+                        decoration: BoxDecoration(//color: Colors.red,
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (4).png'),fit: BoxFit.contain),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 )
+                 ),
+                
+                
+                
+              ],
+            ):Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+
+                    width:width*0.9,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          Text("Our Mission:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("Our mission is simple yet profound - to be your trusted companion in planning and experiencing an authentic Sri Lankan adventure. We aim to provide comprehensive travel information, insider tips, and immersive experiences that showcase the true essence of this diverse country.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                  ),
+                ),
+                Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: width*0.50,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (4).png'),fit: BoxFit.cover),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 ),
+                
+                
+                
+              
+              
+              ],
+            ),
+
+
+
+             width>800?Row(
+              children: [
+                Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: height*0.8,
+                        decoration: BoxDecoration(//color: Colors.red,
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (5).png'),fit: BoxFit.contain),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 )
+                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+                    width:width*0.5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Why Sri Lanka:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("Sri Lanka is more than just a destination; it's a tapestry of cultures, landscapes, and stories waiting to be explored. From the ancient ruins of Anuradhapura to the bustling streets of Colombo, there's something here for every type of traveler. Our love for Sri Lanka is deeply rooted in its warm hospitality, rich history, and the incredible sense of community that permeates every corner.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )),
+                ),
+                
+                
+                
+                
+              ],
+            ):Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(colors: [Color.fromARGB(255, 255, 255, 255),Color.fromARGB(255, 255, 255, 255)])
+                    ),
+
+                    width:width*0.9,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          Text("Why Sri Lanka:",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 11, 2, 49)),),
+                          Text("Sri Lanka is more than just a destination; it's a tapestry of cultures, landscapes, and stories waiting to be explored. From the ancient ruins of Anuradhapura to the bustling streets of Colombo, there's something here for every type of traveler. Our love for Sri Lanka is deeply rooted in its warm hospitality, rich history, and the incredible sense of community that permeates every corner.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                  ),
+                ),
+                Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: Container(
+                        
+                        height: width*0.50,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('assets/pngwing.com (5).png'),fit: BoxFit.cover),
+                  //         boxShadow: [BoxShadow(
+                            
+                  //           blurRadius: 3,spreadRadius: 3,offset: Offset(1,1),color: Colors.black)],
+                  //         borderRadius: BorderRadius.circular(10),
+                  // gradient: LinearGradient(colors: [Colors.black54,Color.fromARGB(255, 44, 43, 43)])
+                  //       ),
+                        //hild:Center(child: Text('We supply the best travel experince!',textAlign: TextAlign.center,style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold,color: Colors.amberAccent),))
+                      ),
+                    ),
+                 ),
+                
+                
+                
               
               
               ],
@@ -197,7 +501,7 @@ final colorizeTextStyle = TextStyle(
               width: width>800?width*0.5:width*0.9,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color.fromARGB(255, 241, 241, 241),
+                color: Color.fromARGB(255, 54, 54, 54),
                 boxShadow: [BoxShadow(
                   blurRadius: 3,spreadRadius: 5,offset: Offset(0,3)
                 )]
@@ -214,41 +518,41 @@ final colorizeTextStyle = TextStyle(
             RichText(text: TextSpan(
               text: "Personalized Itineraries:",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: "Our dedicated team of travel experts will work closely with you to create a customized itinerary that suits your preferences, interests, and budget. Whether you're seeking a relaxing beach holiday, an adventurous wildlife expedition, or a cultural immersion, we will craft a unique travel plan that fulfills your dreams.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: "Our dedicated team of travel experts will work closely with you to create a customized itinerary that suits your preferences, interests, and budget. Whether you're seeking a relaxing beach holiday, an adventurous wildlife expedition, or a cultural immersion, we will craft a unique travel plan that fulfills your dreams.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
             SizedBox(height: 20,),
             RichText(text: TextSpan(
               text: "Accommodation Arrangements:",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: "We have established partnerships with a wide range of accommodations, from luxury resorts and boutique hotels to cozy homestays and eco-lodges. We will help you find the perfect place to stay that matches your style and provides the utmost comfort and relaxation during your visit.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: "We have established partnerships with a wide range of accommodations, from luxury resorts and boutique hotels to cozy homestays and eco-lodges. We will help you find the perfect place to stay that matches your style and provides the utmost comfort and relaxation during your visit.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
             
             SizedBox(height: 20,),
  RichText(text: TextSpan(
               text: "Transportation Services: ",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: "Navigating through Sri Lanka is made easy with our reliable transportation services. We arrange private transfers, chauffeur-driven vehicles, and comfortable coaches to ensure seamless and hassle-free travel between destinations. Sit back, relax, and enjoy the scenic routes as our experienced drivers take you to your desired locations.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: "Navigating through Sri Lanka is made easy with our reliable transportation services. We arrange private transfers, chauffeur-driven vehicles, and comfortable coaches to ensure seamless and hassle-free travel between destinations. Sit back, relax, and enjoy the scenic routes as our experienced drivers take you to your desired locations.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
            
             SizedBox(height: 20,),
 RichText(text: TextSpan(
               text: "Local Guides and Experts: ",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: "To truly immerse yourself in the rich culture, history, and traditions of Sri Lanka, our knowledgeable local guides and experts are ready to accompany you on your explorations. They will share fascinating stories, provide insights into the local way of life, and ensure you don't miss out on any hidden gems that make Sri Lanka so special.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: "To truly immerse yourself in the rich culture, history, and traditions of Sri Lanka, our knowledgeable local guides and experts are ready to accompany you on your explorations. They will share fascinating stories, provide insights into the local way of life, and ensure you don't miss out on any hidden gems that make Sri Lanka so special.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
            
             SizedBox(height: 20,),
 RichText(text: TextSpan(
               text: "24/7 Customer Support: ",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: "Your satisfaction is our top priority. Our dedicated customer support team is available 24/7 to assist you with any queries, concerns, or emergencies that may arise during your trip. We strive to ensure that you have a seamless and stress-free travel experience from start to finish.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: "Your satisfaction is our top priority. Our dedicated customer support team is available 24/7 to assist you with any queries, concerns, or emergencies that may arise during your trip. We strive to ensure that you have a seamless and stress-free travel experience from start to finish.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
            
             SizedBox(height: 20,),
 RichText(text: TextSpan(
               text: "Excursions and Activities:",
               style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 20),
-              children: const <TextSpan>[TextSpan(text: " Enhance your journey with a range of exciting excursions and activities. Embark on thrilling wildlife safaris, go hiking in lush tea plantations, participate in cooking classes to learn the art of Sri Lankan cuisine, or indulge in rejuvenating Ayurvedic spa treatments. We offer a wide array of experiences to cater to every interest and create lifelong memories.",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w200))]
+              children: const <TextSpan>[TextSpan(text: " Enhance your journey with a range of exciting excursions and activities. Embark on thrilling wildlife safaris, go hiking in lush tea plantations, participate in cooking classes to learn the art of Sri Lankan cuisine, or indulge in rejuvenating Ayurvedic spa treatments. We offer a wide array of experiences to cater to every interest and create lifelong memories.",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w200))]
             )),
            
                   ],
