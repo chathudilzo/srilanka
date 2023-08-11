@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -79,8 +80,59 @@ _scrollListner(){
             ],
           ),
            Column(
+
                   children: [
-                    
+                    Center(
+                      child: SizedBox(
+                        width: screenSize.width,
+                        height: screenSize.height*0.2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const SizedBox(width: 20.0, height: 100.0),
+          const Text(
+            'Explore',
+            style: TextStyle(
+              fontSize: 43.0,
+              color: Color.fromARGB(255, 6, 155, 201),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(width: 20.0, height: 100.0),
+          DefaultTextStyle(
+            style: const TextStyle(
+              fontSize: 40.0,
+              fontFamily: 'Horizon',
+              color: Color.fromARGB(255, 7, 7, 7),
+            ),
+            child: AnimatedTextKit(
+              repeatForever: true,
+              animatedTexts: [
+                RotateAnimatedText('Breathtaking Views'),
+                RotateAnimatedText('Cultural Diversity'),
+                RotateAnimatedText('Unforgettable Adventures'),
+                RotateAnimatedText('Exquisite Cuisine'),
+    RotateAnimatedText('Historical Landmarks'),
+    RotateAnimatedText('Thrilling Water Sports'),
+    RotateAnimatedText('Enchanting Beaches'),
+    RotateAnimatedText('Wildlife Safari'),
+    RotateAnimatedText('Traditional Crafts'),
+    RotateAnimatedText('Festivals and Events'),
+    RotateAnimatedText('Tranquil Retreats'),
+    RotateAnimatedText('Local Hospitality'),
+              ],
+              onTap: () {
+                // You can navigate to a specific page when tapped
+                //Navigator.pushNamed(context, '/explore');
+              },
+            ),
+          ),
+        ],
+      ),
+                      ),
+                    ),
                     FeaturedHeading(screenSize: screenSize),
                     FeaturedTiles(screenSize:screenSize),
                     

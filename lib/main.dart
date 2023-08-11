@@ -4,6 +4,7 @@ import 'package:srilanka/content_controller.dart';
 import 'package:srilanka/controllers/weather_controller.dart';
 import 'package:srilanka/screens/about.dart';
 import 'package:srilanka/screens/festival_page.dart';
+import 'package:srilanka/screens/gov_services_page.dart';
 import 'package:srilanka/screens/province_details.dart';
 import 'package:srilanka/screens/full_map_screen.dart';
 import 'firebase_options.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  About(),
+      home:  HomePage(),
     );
   }
 }

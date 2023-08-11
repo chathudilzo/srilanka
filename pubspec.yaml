@@ -56,6 +56,7 @@ dependencies:
   google_maps: ^6.3.0
   flutter_polyline_points: ^1.0.0
   animated_list_item: ^1.0.0
+  url_launcher: 
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +86,7 @@ flutter:
     - assets/fonts/
     - assets/province/
     - assets/festivals/
+    - assets/ministries/
     - .env
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

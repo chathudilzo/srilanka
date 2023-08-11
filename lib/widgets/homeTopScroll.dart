@@ -17,9 +17,9 @@ class TopScroll extends StatefulWidget {
 
 class _TopScrollState extends State<TopScroll> { int _currentIndex = 0;
   final List<String> imageList = [
-    'assets/top3.jpg',
-    'assets/top4.jpg',
     'assets/top1.jpg',
+    'assets/top5.jpg',
+    'assets/top6.jpg',
     
   ];
 
@@ -56,7 +56,7 @@ bool _isHovering=false;
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
                     children: [
-                      Image.asset(image,fit: BoxFit.cover,width: double.infinity,),
+                      Image.asset(image,fit: BoxFit.fitWidth,width: double.infinity,),
                       // Positioned(
                       //   top: 20,
                       //   right: 20,
@@ -87,13 +87,13 @@ bool _isHovering=false;
                       //                         ),
                       //   )),
                       Positioned(
-                        bottom: 100,
+                        top: 200,
                         left: 0,
                         right: 0,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Center(child: Text(titleList[_currentIndex],style: GoogleFonts.montserrat(fontSize: 35,color: Color.fromARGB(255, 255, 255, 255),),)),
+                            Center(child: Text(titleList[_currentIndex],style: GoogleFonts.montserrat(fontSize: 35,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 255, 255, 255),),)),
                             InkWell(  
                               onHover: (value) {
                                 setState(() {

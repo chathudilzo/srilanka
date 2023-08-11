@@ -193,14 +193,15 @@ var screenSize=MediaQuery.of(context).size;
                                 height:screenSize.height*0.25,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
+                                    border:Border.all(color: Colors.black,width: 2),
                                      boxShadow: [BoxShadow(
-                                       blurRadius: 3,spreadRadius: 2,color: Colors.black
+                                       blurRadius: 3,spreadRadius: 0,color: Color.fromARGB(255, 255, 255, 255)
                                      )]
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                                     children: [
-                                      Text(province.name,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                                      Text(province.name,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 41, 40, 40)),),
                                       Container(
                                         width: screenSize.width*0.20,
                                 height: screenSize.height*0.40,
@@ -208,8 +209,8 @@ var screenSize=MediaQuery.of(context).size;
                                           borderRadius: BorderRadius.circular(10),
                                           image:DecorationImage(image: AssetImage(province.image),fit: BoxFit.cover)),
                                       ),
-                                      Text(province.description,style: TextStyle(color: Colors.grey),),
-                                      Text('Famous for:${province.famousFor}',style: TextStyle(color: Colors.amberAccent),)
+                                      Text(province.description,style: TextStyle(color: Color.fromARGB(255, 22, 22, 22)),),
+                                      Text('Famous for:${province.famousFor}',style: TextStyle(color: Color.fromARGB(255, 56, 6, 102)),)
                                     ],
                                   ),
                                 ),

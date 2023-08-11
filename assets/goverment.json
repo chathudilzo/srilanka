@@ -1,0 +1,119 @@
+[
+   
+      {
+        "ministryName": "Ministry of Finance",
+        "webAddress": "https://www.treasury.gov.lk/",
+        "description": "The Ministry of Finance is responsible for the formulation and implementation of the government's fiscal policy. It also oversees the public debt and the management of the country's finances.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Foreign Affairs",
+        "webAddress": "https://www.gov.lk/ministry-foreign-affairs",
+        "description": "The Ministry of Foreign Affairs is responsible for the formulation and implementation of the government's foreign policy. It also represents the country in international forums and organizations.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Defence",
+        "webAddress": "https://www.defence.gov.lk/",
+        "description": "The Ministry of Defence is responsible for the security of the country. It oversees the armed forces and the police force.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Health",
+        "webAddress": "https://www.health.gov.lk/",
+        "description": "The Ministry of Health is responsible for the provision of healthcare to the people of Sri Lanka. It also oversees the country's public health system.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Education",
+        "webAddress": "https://www.moe.gov.lk/",
+        "description": "The Ministry of Education is responsible for the provision of education to the people of Sri Lanka. It also oversees the country's school system.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Agriculture",
+        "webAddress": "https://www.agrimin.gov.lk/",
+        "description": "The Ministry of Agriculture is responsible for the development of the agriculture sector in Sri Lanka. It also oversees the country's food security.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Industry and Commerce",
+        "webAddress": "https://www.industry.gov.lk/",
+        "description": "The Ministry of Industry and Commerce is responsible for the development of the industrial and commercial sectors in Sri Lanka. It also oversees the country's trade policy.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Transport and Civil Aviation",
+        "webAddress": "https://www.motca.gov.lk/",
+        "description": "The Ministry of Transport and Civil Aviation is responsible for the development of the transport and civil aviation sectors in Sri Lanka. It also oversees the country's road, rail, air, and sea transportation.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Power and Energy",
+        "webAddress": "https://www.powerandenergy.gov.lk/",
+        "description": "The Ministry of Power and Energy is responsible for the development of the power and energy sectors in Sri Lanka. It also oversees the country's electricity and petroleum sectors.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Environment and Renewable Energy",
+        "webAddress": "https://www.environment.gov.lk/",
+        "description": "The Ministry of Environment and Renewable Energy is responsible for the protection of the environment and the development of the renewable energy sector in Sri Lanka.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Labour and Employment",
+        "webAddress": "https://www.labour.gov.lk/",
+        "description": "The Ministry of Labour and Employment is responsible for the regulation of the labor market and the protection of workers' rights in Sri Lanka.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+
+      },
+      {
+        "ministryName": "Ministry of Women's Affairs and Child Development",
+        "webAddress": "https://www.womenaffairs.gov.lk/",
+        "description": "The Ministry of Women's Affairs and Child Development is responsible for the promotion of gender equality and the protection of the rights of women and children in Sri Lanka.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Sports",
+        "webAddress": "https://www.sports.gov.lk/",
+        "description": "The Ministry of Sports is responsible for the development of sports in Sri Lanka. It also oversees the country's sports teams.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Tourism",
+        "webAddress": "https://www.srilanka.travel/",
+        "description": "The Ministry of Tourism is responsible for the promotion of tourism in Sri Lanka. It also oversees the country's tourism industry.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Public Administration, Home Affairs, Provincial Councils and Local Government",
+        "webAddress": "https://www.pap.gov.lk/",
+        "description": "The Ministry of Public Administration, Home Affairs, Provincial Councils and Local Government is responsible for the administration of the public sector, the maintenance of law and order, and the development of the country's provincial councils and local governments.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Rural Economic Affairs",
+        "webAddress": "https://www.ruralaffairs.gov.lk/",
+        "description": "The Ministry of Rural Economic Affairs is responsible for the development of the rural economy in Sri Lanka. It also oversees the country's agricultural extension services.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Science, Technology and Research",
+        "webAddress": "https://www.stir.gov.lk/",
+        "description": "The Ministry of Science, Technology and Research is responsible for the promotion of science, technology, and research in Sri Lanka. It also oversees the country's science and technology parks.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Cultural Affairs",
+        "webAddress": "https://www.culturalaffairs.gov.lk/",
+        "description": "The Ministry of Cultural Affairs is responsible for the promotion of Sri Lanka's culture and heritage. It also oversees the country's museums and libraries.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      },
+      {
+        "ministryName": "Ministry of Disaster Management",
+        "webAddress": "https://www.dm.gov.lk/",
+        "description": "The Ministry of Disaster Management is responsible for the preparation for and response to natural disasters in Sri Lanka.",
+        "img":"assets/ministries/Ministry_p_h.jpg"
+      }
+    
+    ]

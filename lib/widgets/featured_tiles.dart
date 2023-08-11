@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:srilanka/screens/festival_page.dart';
+import 'package:srilanka/screens/gov_services_page.dart';
 import 'package:srilanka/screens/homepage_screen.dart';
 
 class FeaturedTiles extends StatelessWidget {
@@ -63,7 +64,7 @@ class FeaturedTiles extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='WaterFalles'?Get.to(()=>HomePage()):Get.to(()=>FestivalsPage());
+                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='WaterFalles'?Get.to(()=>HomePage()):Get.to(()=>GovServices());
               },
               child: SizedBox(
                 height: screenSize.width/6,
