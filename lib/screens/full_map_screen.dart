@@ -183,7 +183,7 @@ String? selectedValue;
           width: width,
           height: height,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-          child: Row(
+          child:width>800? Row(
             children: [
               Stack(
                     children:[
@@ -248,12 +248,12 @@ String? selectedValue;
                                                                             child: Column(
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
-                                                                                Text(weather.place.toString(), style: TextStyle(decoration: TextDecoration.none,color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold)),
-                                                                                Text(weather.weatherIcon.toString(), style: TextStyle(decoration: TextDecoration.none,fontSize: 40)),
+                                                                                Text(weather.place.toString(), style: TextStyle(decoration: TextDecoration.none,color: Colors.white,fontSize:width>800?20:12,fontWeight: FontWeight.bold)),
+                                                                                Text(weather.weatherIcon.toString(), style: TextStyle(decoration: TextDecoration.none,fontSize: width>800?20:14)),
                                                                                 Row(
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                   children: [
-                                                                                    Text(weather.temperature?.toStringAsFixed(0) ?? 'N/A', style: TextStyle(decoration: TextDecoration.none,color:weather.temperature!>30?Color.fromARGB(255, 228, 150, 6):weather.temperature!<20?Color.fromARGB(255, 13, 228, 228):Color.fromARGB(255, 19, 231, 26),fontSize: 30,fontWeight: FontWeight.bold)),
+                                                                                    Text(weather.temperature?.toStringAsFixed(0) ?? 'N/A', style: TextStyle(decoration: TextDecoration.none,color:weather.temperature!>30?Color.fromARGB(255, 228, 150, 6):weather.temperature!<20?Color.fromARGB(255, 13, 228, 228):Color.fromARGB(255, 19, 231, 26),fontSize: width>800?20:12,fontWeight: FontWeight.bold)),
                                                                                     Text('°C',style: TextStyle(decoration: TextDecoration.none,color:Colors.white,fontSize: 25))
                                                                                   ],
                                                                                 ),
@@ -284,6 +284,109 @@ String? selectedValue;
                                  
                                          
             ],
+          ):SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+                      children:[
+                        Container(
+                          decoration:BoxDecoration(
+                                       borderRadius: BorderRadius.circular(10),
+                                       color: Colors.amber,
+                                     ) ,
+                                       child:
+                                             GoogleMap(
+                                             initialCameraPosition:CameraPosition(
+                                               target:destination,
+                                               zoom: 8),
+                                               onMapCreated:_onMapCreated,
+                                               markers:markers
+                                              
+                                               ),
+                                       width:width*0.9,
+                                       height: height*0.6,
+                                                       
+                          )       
+                                     
+                        ]
+                ),SizedBox(height: 10,),
+                Container( width: width*0.9,
+                                    height: height,
+                                    decoration: BoxDecoration(
+                                      boxShadow: [BoxShadow(blurRadius: 5,spreadRadius: 2)],
+                                      gradient: LinearGradient(colors: [Color.fromARGB(255, 36, 37, 37),Colors.black]),
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    
+                                            child: SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                children: [
+                                                  Text(Placess[index].name,textAlign: TextAlign.center, style: TextStyle(decoration: TextDecoration.none, fontSize: 28,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 252, 252, 252),),)
+                                                  ,Card(color: Color.fromARGB(255, 255, 255, 255),
+                                                    child: Padding(
+                                                      padding: const EdgeInsets.all(8.0),
+                                                      child: Text(Placess[index].description,style: TextStyle(fontSize: 20),),
+                                                    ),
+                                                  ),
+                                                 SizedBox(height: 20,),
+                                                  Center(
+                                                      child: Container(
+                                                        decoration: BoxDecoration(
+                                                          boxShadow: [BoxShadow(blurRadius: 3,spreadRadius: 3,offset: Offset(1,1))],
+                                                          borderRadius: BorderRadius.circular(10),
+                                                          color: Color.fromARGB(255, 11, 11, 11),
+                                                        ),
+                                                                    width: MediaQuery.of(context).size.width*0.2 ,
+                                                                     height: MediaQuery.of(context).size.width * 0.2,
+                                                                    child: GetBuilder<WeatherController>(builder: (controller) {
+                                                                      if (controller.clwIsLoading) {
+                                                                        return LoadingAnimationWidget.threeRotatingDots(color: Colors.blue, size: 30);
+                                                                      } else {
+                                                                        Weather? weather = controller.currentWeather;
+                                                                        if (weather != null) {
+                                                                          return Center(
+                                                                            child: SingleChildScrollView(
+                                                                              child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                children: [
+                                                                                  Text(weather.place.toString(), style: TextStyle(decoration: TextDecoration.none,color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold)),
+                                                                                  Text(weather.weatherIcon.toString(), style: TextStyle(decoration: TextDecoration.none,fontSize: 40)),
+                                                                                  Row(
+                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Text(weather.temperature?.toStringAsFixed(0) ?? 'N/A', style: TextStyle(decoration: TextDecoration.none,color:weather.temperature!>30?Color.fromARGB(255, 228, 150, 6):weather.temperature!<20?Color.fromARGB(255, 13, 228, 228):Color.fromARGB(255, 19, 231, 26),fontSize: 30,fontWeight: FontWeight.bold)),
+                                                                                      Text('°C',style: TextStyle(decoration: TextDecoration.none,color:Colors.white,fontSize: 25))
+                                                                                    ],
+                                                                                  ),
+                                                                                  Text(weather.condition.toString(), style: TextStyle(decoration: TextDecoration.none,color: Colors.white,fontSize: 20)),
+                                                                                  //Text(weather.message.toString(), style: TextStyle(color: Colors.white)),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        } else {
+                                                                          return Text(
+                                                                            'Weather data not available.',
+                                                                            style: TextStyle(decoration: TextDecoration.none,color: Colors.white),
+                                                                          );
+                                                                        }
+                                                                      }
+                                                                    }),
+                                                                  ),
+                                                    ),
+                                                   
+                                                ],
+                                              ),
+                                            ),
+                                          
+                                        ),
+                                      
+                                
+                                   
+                                           
+              ],
+            ),
           ),
         ),
       ),

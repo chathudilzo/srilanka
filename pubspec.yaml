@@ -57,6 +57,8 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   animated_list_item: ^1.0.0
   url_launcher: 
+  flutter_svg: 
+  intl:
 
 dev_dependencies:
   flutter_test:

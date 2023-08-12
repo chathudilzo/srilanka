@@ -126,7 +126,7 @@ bool _isHovering=false;
     ):Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height*0.4,
+          height: MediaQuery.of(context).size.height*0.25,
           child: CarouselSlider(options: CarouselOptions(
             height: double.infinity,
             aspectRatio: 19/9,
@@ -148,9 +148,10 @@ bool _isHovering=false;
                 return Container(
                   color: Colors.red,
                   width: MediaQuery.of(context).size.width,
+                  //height: MediaQuery.of(context).size.height*0.1,
                   child: Stack(
                     children: [
-                      Image.asset(image,fit: BoxFit.cover,width: double.infinity,),
+                      Image.asset(image,fit: BoxFit.fitWidth,width: double.infinity,),
                       // Positioned(
                       //   top: 20,
                       //   right: 20,
@@ -195,6 +196,9 @@ bool _isHovering=false;
                                     setState(() {
                                        value?_isHovering=true:_isHovering=false;
                                     });
+                                  },
+                                  onTap: () {
+                                    Get.to(()=>FullMap());
                                   },
                                   child: Container(
                                     padding: const EdgeInsets.all(8),

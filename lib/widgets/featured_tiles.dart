@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:srilanka/screens/festival_page.dart';
 import 'package:srilanka/screens/gov_services_page.dart';
 import 'package:srilanka/screens/homepage_screen.dart';
+import 'package:srilanka/screens/news_list_page.dart';
 
 class FeaturedTiles extends StatelessWidget {
    FeaturedTiles({Key?key,required this.screenSize}):super(key: key);
@@ -13,8 +14,8 @@ class FeaturedTiles extends StatelessWidget {
   final screenSize;
 
 
-  final List<String> assets=['assets/reli.jpg','assets/waterfall.jpg','assets/fest.jpg','assets/gov.jpg'];
-  final List<String> title=['Religous','WaterFalles','Festivels','Gov Services'];
+  final List<String> assets=['assets/reli.jpg','assets/news.jpg','assets/fest.jpg','assets/gov.jpg'];
+  final List<String> title=['Religous','News','Festivels','Gov Services'];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class FeaturedTiles extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):Get.to(()=>FestivalsPage());
+                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +65,7 @@ class FeaturedTiles extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='WaterFalles'?Get.to(()=>HomePage()):Get.to(()=>GovServices());
+                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
               },
               child: SizedBox(
                 height: screenSize.width/6,
@@ -82,9 +83,9 @@ class FeaturedTiles extends StatelessWidget {
                               boxShadow: [
                                 BoxShadow(
                                   offset: Offset(0, 10),
-                                  blurRadius: 20,
+                                  blurRadius: 8,
                                   spreadRadius: 5,
-                                  color:Colors.grey.withOpacity(0.3),
+                                  color:Color.fromARGB(255, 2, 2, 2).withOpacity(0.3),
                                 )
                               ]
                             ),

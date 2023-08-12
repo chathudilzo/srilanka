@@ -33,6 +33,21 @@ console.log(apiUrl);
 });
 
 
+const apiNewsKey=process.env.NEWS_API_KEY;
+
+app.get('/news',async(req,res)=>{
+  const apiUrl=`https://newsapi.org/v2/everything?q=sri lanka&apiKey=${apiNewsKey}`
+
+  try{
+    const response=await axios.get(apiUrl);
+    console.log(response.data);
+    res.status(200).json(response.data);
+  }catch(error){
+    res.status(500).json({ error: 'An error occurred while fetching weather data'+error });
+  }
+})
+
+
 const apiKeyG = process.env.GOOGLE_MAP_API_KEY;
 // Add the following middleware to enable CORS
 

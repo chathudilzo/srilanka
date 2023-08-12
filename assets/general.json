@@ -1,0 +1,24 @@
+{
+    "population": {
+      "value": "21.7",
+      "growthRate": "1.14"
+    },
+    "geography": {
+      "coordinates": "7°N 81°E",
+      "area": "65,612 sq km",
+      "coastline": "1340 km",
+      "largestCity": "Colombo"
+    },
+    "education": {
+      "literacyRate":" 92.5%",
+      "youthLiteracyRate": "98%"
+    },
+    "health": {
+      "lifeExpectancy": {
+        "years": "72",
+        "male": "76.6",
+        "female": "76.6"
+      }
+    },
+    "GDPRate": "-1.6%"
+  }

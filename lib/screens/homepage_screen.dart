@@ -8,6 +8,7 @@ import 'package:srilanka/widgets/bottom_bar.dart';
 import 'package:srilanka/widgets/carousel.dart';
 import 'package:srilanka/widgets/featured_heading.dart';
 import 'package:srilanka/widgets/featured_tiles.dart';
+import 'package:srilanka/widgets/general_info_bar.dart';
 import 'package:srilanka/widgets/homeTopScroll.dart';
 import 'package:srilanka/widgets/quick_access_bar.dart';
 import 'package:srilanka/widgets/top_bar.dart';
@@ -27,6 +28,19 @@ double _opacity=0;
 
 double _scrollPosition=0;
 
+
+ final colorizeColors = [
+  Colors.purple,
+  Colors.blue,
+  Colors.yellow,
+  Colors.red,
+];
+
+final colorizeTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontFamily: 'Horizon',
+);
+
 _scrollListner(){
     setState(() {
       _scrollPosition=_scrollController.position.pixels;
@@ -39,6 +53,34 @@ _scrollListner(){
     _scrollController.addListener(_scrollListner);
   }
 
+// Widget _animeText(){
+//   return SizedBox(
+//   width: 250.0,
+//   child: AnimatedTextKit(
+//     animatedTexts: [
+//       ColorizeAnimatedText(
+//         'Welcome',
+//         textStyle: colorizeTextStyle,
+//         colors: colorizeColors,
+//       ),
+//       ColorizeAnimatedText(
+//         'To',
+//         textStyle: colorizeTextStyle,
+//         colors: colorizeColors,
+//       ),
+//       ColorizeAnimatedText(
+//         'Sri Lanka',
+//         textStyle: colorizeTextStyle,
+//         colors: colorizeColors,
+//       ),
+//     ],
+//     isRepeatingAnimation: true,
+//     onTap: () {
+//       print("Tap Event");
+//     },
+//   ),
+// );
+// }
   
 
   @override
@@ -69,6 +111,12 @@ _scrollListner(){
         children: [
           TopScroll(),
           FloatingQuickAccessBar(screenSize:screenSize),
+          //_animeText(),
+          Text('Welcome To Sri Lanka!',textAlign: TextAlign.center,style:GoogleFonts.dancingScript(
+               fontSize:screenSize.width<800?40: 60,
+               fontWeight: FontWeight.bold
+             )),
+             GeneralBar(),
           Stack(
             children: [
               Padding(
@@ -92,18 +140,18 @@ _scrollListner(){
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const SizedBox(width: 20.0, height: 100.0),
-          const Text(
+           Text(
             'Explore',
             style: TextStyle(
-              fontSize: 43.0,
+              fontSize:screenSize.width<800?20: 43.0,
               color: Color.fromARGB(255, 6, 155, 201),
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(width: 20.0, height: 100.0),
           DefaultTextStyle(
-            style: const TextStyle(
-              fontSize: 40.0,
+            style:  TextStyle(
+              fontSize: screenSize.width<800?20: 43.0,
               fontFamily: 'Horizon',
               color: Color.fromARGB(255, 7, 7, 7),
             ),

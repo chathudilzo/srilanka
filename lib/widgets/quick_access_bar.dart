@@ -106,7 +106,7 @@ children: [
             ),
           ],
         ):Card(
-          color: Colors.black,
+          color: Color.fromARGB(255, 43, 40, 39),
           elevation: 5,
           child: Padding(padding: EdgeInsets.only(top: widget.screenSize.height/50,bottom: widget.screenSize.height/50),child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

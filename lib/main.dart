@@ -1,10 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:srilanka/content_controller.dart';
+import 'package:srilanka/controllers/news_controller.dart';
 import 'package:srilanka/controllers/weather_controller.dart';
 import 'package:srilanka/screens/about.dart';
 import 'package:srilanka/screens/festival_page.dart';
 import 'package:srilanka/screens/gov_services_page.dart';
+import 'package:srilanka/screens/news_list_page.dart';
 import 'package:srilanka/screens/province_details.dart';
 import 'package:srilanka/screens/full_map_screen.dart';
 import 'firebase_options.dart';
@@ -20,6 +22,7 @@ void main()async {
   );
   Get.put(ContentController());
   final WeatherController wController = Get.put(WeatherController());
+  final NewsController controller=Get.put(NewsController());
   runApp(const MyApp());
 }
 
