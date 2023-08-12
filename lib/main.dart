@@ -4,6 +4,7 @@ import 'package:srilanka/content_controller.dart';
 import 'package:srilanka/controllers/news_controller.dart';
 import 'package:srilanka/controllers/weather_controller.dart';
 import 'package:srilanka/screens/about.dart';
+import 'package:srilanka/screens/faq_page.dart';
 import 'package:srilanka/screens/festival_page.dart';
 import 'package:srilanka/screens/gov_services_page.dart';
 import 'package:srilanka/screens/news_list_page.dart';

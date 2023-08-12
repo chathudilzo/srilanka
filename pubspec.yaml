@@ -59,6 +59,7 @@ dependencies:
   url_launcher: 
   flutter_svg: 
   intl:
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:

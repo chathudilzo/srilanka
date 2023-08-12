@@ -127,19 +127,23 @@ Padding item(int index){
              )),
        ),
        endDrawer: const MenuDrawer(),
-      body: Center(
-        child: Container(
-          width:MediaQuery.of(context).size.width<800? width:width*0.5,
-          height: height,
-          child:_isLoading?Center(
-            child: LoadingAnimationWidget.beat(color: Colors.blue, size: 50),
-          ):ListView.builder(
-            itemCount: _festivals.length,
-            itemBuilder:(context,index){
-              return AnimatedListItem(child: item(index), index: index, length: _festivals.length, aniController: _animationController);
-            })
+      body:Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Container(
+              width:MediaQuery.of(context).size.width<800? width:width*0.5,
+              //height: height,
+              child:_isLoading?Center(
+                child: LoadingAnimationWidget.beat(color: Colors.blue, size: 50),
+              ):ListView.builder(
+                itemCount: _festivals.length,
+                itemBuilder:(context,index){
+                  return AnimatedListItem(child: item(index), index: index, length: _festivals.length, aniController: _animationController);
+                })
+            ),
         ),
-      )
+      ),
+      
     );
   }
 }

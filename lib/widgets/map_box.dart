@@ -254,7 +254,7 @@ String? selectedValue;
                                  GoogleMap(
                                  initialCameraPosition:CameraPosition(
                                    target:destination,
-                                   zoom: 4),
+                                   zoom: 12),
                                    onMapCreated:_onMapCreated,
                                    markers: {
                                      Marker(markerId: MarkerId("Destination"), position: destination),
@@ -292,7 +292,7 @@ String? selectedValue;
                 ),
                 Expanded(
                   child: Text(
-                    'Select Item',
+                    'Select Location',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,

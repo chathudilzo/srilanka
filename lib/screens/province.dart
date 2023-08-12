@@ -222,7 +222,7 @@ var screenSize=MediaQuery.of(context).size;
                    // ),
               ),
                 ),
-                 BottomBar()
+                // BottomBar()
           ],
         ),
       ):SingleChildScrollView(
@@ -326,7 +326,7 @@ var screenSize=MediaQuery.of(context).size;
                        
                         
                          
-           BottomBar()
+           //BottomBar()
           ]
         )
       )      

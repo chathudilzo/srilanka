@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:srilanka/screens/faq_page.dart';
 import 'package:srilanka/screens/festival_page.dart';
 import 'package:srilanka/screens/gov_services_page.dart';
 import 'package:srilanka/screens/homepage_screen.dart';
@@ -14,8 +15,8 @@ class FeaturedTiles extends StatelessWidget {
   final screenSize;
 
 
-  final List<String> assets=['assets/reli.jpg','assets/news.jpg','assets/fest.jpg','assets/gov.jpg'];
-  final List<String> title=['Religous','News','Festivels','Gov Services'];
+  final List<String> assets=['assets/faq_travel.jpg','assets/news.jpg','assets/fest.jpg','assets/gov.jpg'];
+  final List<String> title=['Faq','News','Festivels','Gov Services'];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class FeaturedTiles extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
+                title[pageIndex]=='Faq'?Get.to(()=>Faq_Page()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +66,7 @@ class FeaturedTiles extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                title[pageIndex]=='Religous'?Get.to(()=>HomePage()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
+                title[pageIndex]=='Faq'?Get.to(()=>Faq_Page()):title[pageIndex]=='Festivels'?Get.to(()=>FestivalsPage()):title[pageIndex]=='News'?Get.to(()=>NewsListPage()): Get.to(()=>GovServices());
               },
               child: SizedBox(
                 height: screenSize.width/6,
