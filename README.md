@@ -1,43 +1,44 @@
 Tourism Web App
-This is a web application built for promoting tourism in Sri Lanka. The app provides information about tourist destinations, festivals, news, weather, and more.
+This is a web application built for promoting tourism in Sri Lanka. The app provides information about tourist destinations, festivals, news, weather, and more.  
 
-Features
-View tourist destinations and their details.
-Explore upcoming festivals in Sri Lanka.
-Get the latest news related to tourism.
-Check the current weather conditions.
-User authentication with Google Sign-In.
-User profiles to track preferences and quiz scores.
-Integration with Firebase for data storage.
-Technologies Used
-Frontend: Flutter for Web
-Backend: Node.js
-Database: Firebase Firestore
+Features  
+View tourist destinations and their details.  
+Explore upcoming festivals in Sri Lanka.  
+Get the latest news related to tourism.  
+Check the current weather conditions.  
+User authentication with Google Sign-In.  
+User profiles to track preferences and quiz scores.  
+Integration with Firebase for data storage.  
+Technologies Used  
+Frontend: Flutter for Web  
+Backend: Node.js  
+Database: Firebase Firestore    
 
-APIs:
-Google Maps API for retrieving map data.
-Weather API for fetching weather conditions.
-News API for getting tourism-related news.
 
-Setup
-Clone the repository:
+APIs:  
+Google Maps API for retrieving map data.  
+Weather API for fetching weather conditions.  
+News API for getting tourism-related news.  
 
-git clone https://github.com/your-username/tourism-web-app.git
-Install dependencies:
+Setup  
+Clone the repository:  
 
-cd tourism-web-app
-flutter pub get
-cd server
-npm install
+git clone https://github.com/your-username/tourism-web-app.git  
+Install dependencies:  
 
-Start the Node.js server for fetching Google Map and Weather data:
+cd tourism-web-app  
+flutter pub get  
+cd server  
+npm install  
 
-cd server
-npm start
+Start the Node.js server for fetching Google Map and Weather data:  
+  
+cd server  
+npm start  
 
-Run the Flutter web app (disable web security for CORS):
-
-flutter run -d chrome --web-browser-flag "--disable-web-security"
+Run the Flutter web app (disable web security for CORS):  
+  
+flutter run -d chrome --web-browser-flag "--disable-web-security"  
 
 
 https://github.com/chathudilzo/srilanka/assets/93638679/15b8bcd0-7cef-4f55-b029-83d637d2e03f
