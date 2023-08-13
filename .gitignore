@@ -12,6 +12,7 @@ migrate_working_dir/
 
 # Secret file
 .env
+server/.env
 
 # IntelliJ related
 *.iml
