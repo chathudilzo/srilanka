@@ -1,7 +1,17 @@
-Tourism Web App
+##Tourism Web App
 This is a web application built for promoting tourism in Sri Lanka. The app provides information about tourist destinations, festivals, news, weather, and more.  
 
-Features  
+https://github.com/chathudilzo/srilanka/assets/93638679/15b8bcd0-7cef-4f55-b029-83d637d2e03f
+
+https://github.com/chathudilzo/srilanka/assets/93638679/f4591972-cf71-4863-a694-9fea88d677c2
+
+https://github.com/chathudilzo/srilanka/assets/93638679/2476951e-10bb-4776-acb0-98a6ded0e5a9
+
+https://github.com/chathudilzo/srilanka/assets/93638679/cbb79436-8d2a-4020-ad05-5e368e742519
+
+
+
+##Features  
 View tourist destinations and their details.  
 Explore upcoming festivals in Sri Lanka.  
 Get the latest news related to tourism.  
@@ -15,7 +25,7 @@ Backend: Node.js
 Database: Firebase Firestore    
 
 
-APIs:  
+##APIs:  
 Google Maps API for retrieving map data.  
 Weather API for fetching weather conditions.  
 News API for getting tourism-related news.  
@@ -39,15 +49,6 @@ npm start
 Run the Flutter web app (disable web security for CORS):  
   
 flutter run -d chrome --web-browser-flag "--disable-web-security"  
-
-
-https://github.com/chathudilzo/srilanka/assets/93638679/15b8bcd0-7cef-4f55-b029-83d637d2e03f
-
-https://github.com/chathudilzo/srilanka/assets/93638679/f4591972-cf71-4863-a694-9fea88d677c2
-
-https://github.com/chathudilzo/srilanka/assets/93638679/2476951e-10bb-4776-acb0-98a6ded0e5a9
-
-https://github.com/chathudilzo/srilanka/assets/93638679/cbb79436-8d2a-4020-ad05-5e368e742519
 
 
 A few resources to get you started if this is your first Flutter project:
