@@ -1,4 +1,4 @@
-##Tourism Web App
+## Tourism Web App
 This is a web application built for promoting tourism in Sri Lanka. The app provides information about tourist destinations, festivals, news, weather, and more.  
 
 https://github.com/chathudilzo/srilanka/assets/93638679/15b8bcd0-7cef-4f55-b029-83d637d2e03f
@@ -11,7 +11,7 @@ https://github.com/chathudilzo/srilanka/assets/93638679/cbb79436-8d2a-4020-ad05-
 
 
 
-##Features  
+## Features  
 View tourist destinations and their details.  
 Explore upcoming festivals in Sri Lanka.  
 Get the latest news related to tourism.  
@@ -25,7 +25,7 @@ Backend: Node.js
 Database: Firebase Firestore    
 
 
-##APIs:  
+## APIs:  
 Google Maps API for retrieving map data.  
 Weather API for fetching weather conditions.  
 News API for getting tourism-related news.  
